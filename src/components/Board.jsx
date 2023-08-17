@@ -10,18 +10,14 @@ const Table = styled.div`
  flex-wrap: wrap;
 `
 
-export default function Board() {
+export default function Board({ squares, click }) {
     return (
         <Table>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
-            <Square></Square>
+            {
+                squares.map((square, i) => (
+                    <Square key={i} value={square} onClick={() => click(i)} ></Square>
+                ))
+            }
         </Table>
     )
 }

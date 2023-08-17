@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Click = styled.button`
+const StyledButton = styled.button`
 width:100px;
  height:100px;
  background: #fff;
@@ -18,8 +18,8 @@ width:100px;
   }
 `
 
-export default function Square() {
-    return (
-        <Click>x</Click>
-    )
+export default function Square(props) {
+  return (
+    <StyledButton onClick={props.onClick}>{props.value}</StyledButton>
+  )
 }
